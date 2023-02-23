@@ -92,8 +92,32 @@ header {
     position: absolute;
     width: 100%;
     z-index: 200;
+    transition: 0.2 all ease-in;
+
+    &.fixed {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: $primary;
+        z-index: 9999;
+        animation-name: fadeIn;
+        animation-duration: 0.4s;
+    }
+
+    @keyframes fadeIn {
+        from {
+            top: -70px;
+            opacity: 0;
+        }
+
+        to {
+            top: 0;
+            opacity: 1;
+        }
+    }
 
     .navbar {
+        padding: 0;
         border-color: $lightcobaltblue !important;
     }
 
